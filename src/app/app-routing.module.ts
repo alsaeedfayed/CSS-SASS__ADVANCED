@@ -10,6 +10,10 @@ const routes: Routes = [
   {
     path : 'natours',
     loadChildren : () => import('./modules/natours/natours.module').then((m) => m.NatoursModule)
+  },
+  {
+    path :'scss-pratice',
+    loadChildren : () => import('./modules/scss-pratice/scss-pratice.module').then((m) => m.ScssPraticeModule)
   }
 ];
 
