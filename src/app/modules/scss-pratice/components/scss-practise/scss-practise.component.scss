@@ -1,0 +1,93 @@
+//variables
+$color-primary: #f9ed69;
+$color-secondary: #f08a5d;
+$color-tertiary: #b83b5e;
+$color-text-dark: #333;
+$color-text-white : #eee;
+$width-btn: 15rem;
+
+
+//mixins
+@mixin clearfix {
+  &::after{
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+//pass an argument to the mixin
+@mixin style-link-text($color){
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $color;
+}
+
+//placeholder to extend --inheritance-----
+%btn-placeholder{
+  font-size: 1.7rem;
+    padding: 1rem;
+    display: inline-block;
+    border-radius: 10rem;
+    width: $width-btn;
+    margin-left: 1rem;
+    text-align: center;
+    @include style-link-text($color-text-white);
+}
+
+//================================ START STYLING OUR PAGE==============================
+nav {
+  margin: 3rem;
+  background-color: $color-primary;
+  //use the mixin
+  @include clearfix
+}
+
+.navigation {
+  list-style: none;
+  float: left;
+  //nesting => try not to exceed 3 levels
+  li {
+    display: inline-block;
+    margin-left: 3rem;
+    font-size: 1.7rem;
+    padding: 1rem;
+
+    &:first-child{
+      margin: 0;
+    }
+
+    a:link {
+      //call mixin with passing argument variable.
+      @include style-link-text($color-text-dark)
+    }
+  }
+}
+
+.buttons {
+  float: right;
+  .btn-main{
+    &:link{
+      @extend %btn-placeholder;
+      background-color: $color-secondary;
+
+    }
+    &:hover{
+      //use built-in darken method
+      background-color: darken($color-secondary, 5%);
+    }
+  }
+
+  .btn-hot{
+    &:link{
+      @extend %btn-placeholder;
+      background-color: $color-tertiary;
+    }
+    &:hover{
+      //use built-in darken method
+      background-color: lighten($color-tertiary, 10%);
+    }
+  }
+
+
+}

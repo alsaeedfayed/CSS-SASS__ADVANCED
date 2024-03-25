@@ -16,6 +16,15 @@ Dark green    : #28b485
 //   box-sizing: border-box; // dont add padding or border to total height or width
 // }
 
+//==================VARIABLES====================
+$color-primary: #55c57a;
+$color-primary-light: #7ed56f;
+$color-primary-dark: #28b485;
+$color-grey-dark: #777;
+$color-white: #fff;
+$color-black: #000;
+
+//================================================
 .header-body {
   //header is the body
   //set font in body to be inherited.
@@ -34,38 +43,35 @@ Dark green    : #28b485
   //to specify gradiant we use bg-image and spearate with comma
   background-image: linear-gradient(
       to right bottom,
-      rgba(126, 213, 111, 0.8),
-      rgba(40, 180, 133, 0.8)
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
     ),
     url(../../../../../assets/images/Natours/starter/img/hero.jpg);
   background-size: cover;
   background-position: top;
-
   //clip path
   //clip-path: polygon(xy, xy , xy , xy);
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-
   position: relative;
-}
 
-//logo
-.header__logo-box {
-  position: absolute;
-  top: 4rem;
-  left: 4rem;
-}
+  &__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+  }
 
-.header__logo {
-  height: 3.5rem; //setting the height automatically set the width
-}
+  &__logo {
+    height: 3.5rem; //setting the height automatically set the width
+  }
 
-//center the text box no matter the screen size or orientation
-.header__text-box {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%); //transform the element itself x , y
-  text-align: center;
+  &__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    //center the text box no matter the screen size or orientation
+    transform: translate(-50%, -50%); //transform the element itself x , y
+    text-align: center;
+  }
 }
 
 .heading-primary {
@@ -73,92 +79,86 @@ Dark green    : #28b485
   text-transform: uppercase;
   backface-visibility: hidden;
   margin-bottom: 4rem;
+
+  &--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    //apply animation
+    animation-name: moveInLeft;
+    animation-duration: 1.5s;
+    animation-timing-function: ease;
+
+    /*animation-iteration-count: 2;
+    animation-delay: 3s;*/
+  }
+
+  &--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 1.5rem;
+    //apply animation
+    animation: moveInRight 1.5s ease-out;
+  }
 }
-
-.heading-primary--main {
-  display: block;
-  font-size: 6rem;
-  font-weight: 400;
-  letter-spacing: 3.5rem;
-  //apply animation
-  animation-name: moveInLeft;
-  animation-duration: 1.5s;
-  animation-timing-function: ease;
-
-  /*animation-iteration-count: 2;
-  animation-delay: 3s;*/
-}
-
-.heading-primary--sub {
-  display: block;
-  font-size: 2rem;
-  font-weight: 400;
-  letter-spacing: 1.5rem;
-  //apply animation
-  animation: moveInRight 1.5s ease-out;
-}
-
 
 //seudo classes [link , visisted , active , hover]
-.btn:link,
-.btn:visited {
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 1.5rem 4rem;
-  display: inline-block; //if adding padding or whatever
-  border-radius: 10rem;
-  transition: all .2s ease-in-out;
-  position: relative;
-  //animation: moveBottomTop .5s ease-out;
+.btn {
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block; //if adding padding or whatever
+    border-radius: 10rem;
+    transition: all 0.2s ease-in-out;
+    position: relative;
+    //animation: moveBottomTop .5s ease-out;
+  }
 
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2); // X Y Blure Color
+
+    &::after {
+      transform: scaleX(1.3) scaleY(1.6);
+      opacity: 0;
+    }
+  }
+
+  &:active {
+    transform: translate(-1px);
+    box-shadow: 0 2px 5px rgba($color-black, 0.2); // X Y Blure Color
+  }
+
+  &::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s ease-out;
+  }
+
+  &--white {
+    background-color: #fff;
+    color: #777;
+    &::after {
+      background-color: #fff;
+    }
+  }
+
+  &--animated {
+    animation: moveBottomTop 0.5s ease-out 0.75s;
+    animation-fill-mode: backwards; //automatically applies the 0% ... so opacity will be 0 -- element is hidden
+  }
 }
-
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 .5rem 1rem rgba(0,0,0,.2); // X Y Blure Color
-}
-
-.btn:active {
-  transform: translate(-1px);
-  box-shadow: 0 2px 5px rgba(0,0,0,.2); // X Y Blure Color
-}
-
-.btn--white {
-  background-color: #fff;
-  color: #777;
-}
-
-//sudo element
-.btn::after{
-  content: '';
-  display: inline-block;
-  height: 100%;
-  width: 100%;
-  border-radius: 10rem;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  transition: all .4s ease-out;
-
-}
-
-
-.btn--white::after{
-  background-color: #fff;
-}
-
-.btn:hover::after{
-  transform: scaleX(1.3) scaleY(1.6);
-  opacity: 0;
-}
-
-.btn--animated {
-  animation: moveBottomTop .5s ease-out .75s;
-  animation-fill-mode: backwards; //automatically applies the 0% ... so opacity will be 0 -- element is hidden
-}
-
-
 
 //animations
 @keyframes moveInLeft {
