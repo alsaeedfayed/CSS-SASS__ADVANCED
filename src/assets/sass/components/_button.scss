@@ -53,3 +53,28 @@
     animation-fill-mode: backwards; //automatically applies the 0% ... so opacity will be 0 -- element is hidden
   }
 }
+
+.btn-text {
+  &:link,
+  &:visited {
+    color: $color-primary;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 1px solid $color-primary;
+    padding: 3px;
+    font-size: $default-font-size;
+    transition: .2s ease-in-out;
+  }
+
+  &:hover {
+    background-color: $color-primary;
+    color: $color-white;
+    box-shadow: 0 1rem 2rem rgba($color-black, .2);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    box-shadow: 0 .5rem 2rem rgba($color-black, .2);
+    transform: translateY(0px);
+  }
+}

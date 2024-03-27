@@ -1,0 +1,43 @@
+.composition{
+  position: relative;
+  &__img{
+    width: 55%;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .4);
+    border-radius: 2px;
+    position: absolute;
+    transition: .2s ease;
+    z-index: 10;
+    //TODO To replace border with outline to be able to make offset
+    outline-offset: 1rem;
+
+    &--p1{
+      left: 0;
+      top: -2rem;
+    }
+
+    &--p2{
+      right: 0;
+      top: 2rem;
+    }
+
+    &--p3{
+      left: 20%;
+      top: 10rem;
+    }
+
+    &:hover{
+      cursor: pointer;
+      outline: 1rem solid $color-primary;
+      transform: scale(1.05) translateY(-.5rem);
+      box-shadow: 0 2.5rem 4rem rgba($color-black, .4);
+      //TODO MAKE Z-INDEX HIGER TO SHOW HOVERED IMAGE ON TOP OF THE OTHERS
+      z-index: 20;
+
+    }
+  }
+
+  //TODO To scale down unhovered images
+  &:hover &__img:not(:hover){
+    transform: scale(.95);
+  }
+}
