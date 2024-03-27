@@ -1,7 +1,7 @@
 .grid-test-float {
   .row {
     max-width: $grid-float-width;
-    background-color: #eee;
+    //background-color: #eee;
     margin: 0 auto; //to automatically center the item
     &:not(:last-child) {
       margin-bottom: $gutter-vertical;
@@ -12,7 +12,7 @@
 
     //TODO SELECT ALL COLS BY ATTRIBUTE SELECTOR TO MAKE SAME STYLE FOR THEM
     [class^="col-"] {
-      background-color: rgb(222, 219, 218);
+    //  background-color: rgb(222, 219, 218);
       float: left;
       padding: 0.7rem;
       &:not(:last-child) {
