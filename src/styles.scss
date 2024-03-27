@@ -1,17 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+//abstract
+@import "./assets/sass/abstract/functions";
+@import "./assets/sass/abstract/mixins";
+@import "./assets/sass/abstract/variables";
+
+//base
+@import "./assets/sass/base/base";
+@import "./assets/sass/base/animations";
+@import "./assets/sass/base/typography";
+@import "./assets/sass/base/utilities";
+
+//components
+@import "./assets/sass/components/button";
+
+//layout
+@import "./assets/sass/layout/header";
+@import "./assets/sass/layout/grid_floats"
 
 
-html {
-  //set the root font size
-  font-size: 62.5%;
-}
-
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box; // dont add padding or border to total height or width
-}
-
-@import "./assets/sass/base/base"

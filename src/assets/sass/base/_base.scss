@@ -1,0 +1,17 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; // dont add padding or border to total height or width
+}
+
+html {
+  //set the root font size
+  font-size: 62.5%;
+}
+
+
+
+
+

@@ -1,0 +1,55 @@
+//seudo classes [link , visisted , active , hover]
+.btn {
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block; //if adding padding or whatever
+    border-radius: 10rem;
+    transition: all 0.2s ease-in-out;
+    position: relative;
+    //animation: moveBottomTop .5s ease-out;
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2); // X Y Blure Color
+
+    &::after {
+      transform: scaleX(1.3) scaleY(1.6);
+      opacity: 0;
+    }
+  }
+
+  &:active {
+    transform: translate(-1px);
+    box-shadow: 0 2px 5px rgba($color-black, 0.2); // X Y Blure Color
+  }
+
+  &::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s ease-out;
+  }
+
+  &--white {
+    background-color: #fff;
+    color: #777;
+    &::after {
+      background-color: #fff;
+    }
+  }
+
+  &--animated {
+    animation: moveBottomTop 0.5s ease-out 0.75s;
+    animation-fill-mode: backwards; //automatically applies the 0% ... so opacity will be 0 -- element is hidden
+  }
+}
