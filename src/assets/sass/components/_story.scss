@@ -1,0 +1,72 @@
+.story{
+  width: 75%;
+  margin: 0 auto;
+  margin-bottom: 8rem ;
+  box-shadow: 0 3rem 6rem rgba($color-black , .1);
+  //TODO MAKE THE STORY BG KINDA TRANSPARENT
+  background-color: rgba($color-white, .5);
+  border-radius: 3px;
+  padding: 6rem;
+  padding-left: 9rem;
+  font-size: $default-font-size;
+  transform: skewX(-12deg);
+  //TODO WHEN USING SKEW ON SOME ELEMENT YOU MUST SKEW THE OPPOSITE WHAT IS INSIDE THAT ELEMENT USING DIRECT CHILD
+  > * {
+    transform: skewX(12deg);
+    //TODO remember this is not working for the figure because there is anoter transform on it .. so i did it manually
+  }
+
+
+  &__shape{
+    width: 15rem;
+    height: 15rem;
+    position: relative;
+    float: left; //TODO left to make eveything around it
+    //TODO RELATED TO FLOAT WE MAKE SHAPE OUTSIDE
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%); //defines where the shape should be
+    -webkit-clip-path: circle(50% at 50% 50%);;
+    clip-path: circle(50% at 50% 50%); //make the shape really look like a circle
+    //TODO DONT USE MARGIN OR PADDING WITH FLOATS .. USE TRANSFORM
+    transform: translateX(-3rem) skewX(12deg);
+
+  }
+
+  &__image{
+    height: 100%;
+    transform: translateX(-3rem) scale(1.4);
+    transition: transform .5s ease-in-out;
+    backface-visibility: hidden;
+  }
+
+  &__text{
+    transform: skewX(12deg);
+  }
+
+  &__caption{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    text-transform: uppercase;
+    text-align: center;
+    color: $color-white;
+    font-size: 1.7rem;
+    //TODO hide the caption before hover
+    opacity: 0;
+    transition: transform .5s ease-in-out;
+    backface-visibility: hidden;
+  }
+
+  //TODO SHOW THE CAPTION ON HOVER
+  &:hover &__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+
+  //TODO SCALE AND BLUR THE IMAGE ON HOVER
+  &:hover &__image {
+    transform: translateX(-4rem) scale(1);
+    filter: blur(3px) brightness(80%); //TODO for brightness the value < 100% makes it darker & vise versa
+  }
+}

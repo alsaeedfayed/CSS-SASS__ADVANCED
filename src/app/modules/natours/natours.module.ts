@@ -7,6 +7,7 @@ import { GridFloatsComponent } from "./components/grid-floats/grid-floats.compon
 import { AboutComponent } from './components/about/about.component';
 import { FeaturesComponent } from './components/features/features.component';
 import { TourComponent } from './components/tour/tour.component';
+import { StoriesComponent } from './components/stories/stories.component';
 
 
 
@@ -17,7 +18,8 @@ import { TourComponent } from './components/tour/tour.component';
         GridFloatsComponent,
         AboutComponent,
         FeaturesComponent,
-        TourComponent
+        TourComponent,
+        StoriesComponent
     ],
     imports: [
         CommonModule,
