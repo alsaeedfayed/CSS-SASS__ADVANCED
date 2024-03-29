@@ -6,6 +6,7 @@ import { NatoursRoutingModule } from './natours.routing.module';
 import { GridFloatsComponent } from "./components/grid-floats/grid-floats.component";
 import { AboutComponent } from './components/about/about.component';
 import { FeaturesComponent } from './components/features/features.component';
+import { TourComponent } from './components/tour/tour.component';
 
 
 
@@ -15,7 +16,8 @@ import { FeaturesComponent } from './components/features/features.component';
         NatoursComponent,
         GridFloatsComponent,
         AboutComponent,
-        FeaturesComponent
+        FeaturesComponent,
+        TourComponent
     ],
     imports: [
         CommonModule,
