@@ -1,5 +1,6 @@
 //seudo classes [link , visisted , active , hover]
 .btn {
+  &, //TODO to apply all next to a button as well
   &:link,
   &:visited {
     text-transform: uppercase;
@@ -10,6 +11,10 @@
     transition: all 0.2s ease-in-out;
     position: relative;
     //animation: moveBottomTop .5s ease-out;
+
+    //for button
+    border: none;
+    cursor: pointer;
   }
 
   &:hover {
