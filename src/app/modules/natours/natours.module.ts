@@ -9,6 +9,7 @@ import { FeaturesComponent } from './components/features/features.component';
 import { TourComponent } from './components/tour/tour.component';
 import { StoriesComponent } from './components/stories/stories.component';
 import { BookNowComponent } from './components/book-now/book-now.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 
@@ -21,7 +22,8 @@ import { BookNowComponent } from './components/book-now/book-now.component';
         FeaturesComponent,
         TourComponent,
         StoriesComponent,
-        BookNowComponent
+        BookNowComponent,
+        FooterComponent
     ],
     imports: [
         CommonModule,
