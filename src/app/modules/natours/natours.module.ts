@@ -23,7 +23,7 @@ import { FooterComponent } from './components/footer/footer.component';
         TourComponent,
         StoriesComponent,
         BookNowComponent,
-        FooterComponent
+        FooterComponent,
     ],
     imports: [
         CommonModule,
