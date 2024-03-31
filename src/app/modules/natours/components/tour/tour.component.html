@@ -1,4 +1,4 @@
-<section class="section-tours">
+<section class="section-tours" id="section-tours">
   <div class="u-center-text u-margin-bottom-big">
     <h2 class="heading-secodary">Most popular tours</h2>
   </div>
@@ -63,7 +63,7 @@
                 <p class="card__price-only">only</p>
                 <p class="card__price-value">$279</p>
               </div>
-              <a href="#" class="btn btn--white">Book Now!</a>
+              <a href="#"  class="btn btn--white" (click)="openModal($event)">Book Now!</a>
             </div>
           </div>
         </div>
@@ -106,3 +106,7 @@
     </div>
   </div>
 </section>
+
+<app-popup>
+  <p>hello</p>
+</app-popup>

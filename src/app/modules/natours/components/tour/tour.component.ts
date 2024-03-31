@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PopupServiceService } from '../../../../shared/services/popup-service.service';
 
 @Component({
   selector: 'app-tour',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrl: './tour.component.scss'
 })
 export class TourComponent {
+
+  constructor(private popUpService : PopupServiceService) { }
+
+  openModal(event : any): void {
+    event.preventDefault();
+    this.popUpService.openModal();
+  }
 
 }
