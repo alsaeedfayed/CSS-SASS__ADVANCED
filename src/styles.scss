@@ -1,8 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+
 //abstract
 @import "./assets/sass/abstract/functions";
-@import "./assets/sass/abstract/mixins";
 @import "./assets/sass/abstract/variables";
+@import "./assets/sass/abstract/mixins";
+
 
 //base
 @import "./assets/sass/base/base";
@@ -24,5 +26,5 @@
 //layout
 @import "./assets/sass/layout/header";
 @import "./assets/sass/layout/grid_floats";
-@import "./assets/sass/layout/navigation"
+@import "./assets/sass/layout/navigation";
 
