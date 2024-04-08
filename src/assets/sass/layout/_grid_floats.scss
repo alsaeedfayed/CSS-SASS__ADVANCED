@@ -1,3 +1,4 @@
+@import "../abstract/mixins";
 .grid-test-float {
   .row {
     max-width: $grid-float-width;
@@ -10,6 +11,10 @@
     //TODO clearfix mixin fot fix float and height issue
     @include clearfix();
 
+    @include respond(tab-port){
+      max-width: 50rem;
+    }
+
     //TODO SELECT ALL COLS BY ATTRIBUTE SELECTOR TO MAKE SAME STYLE FOR THEM
     [class^="col-"] {
     //  background-color: rgb(222, 219, 218);
@@ -18,6 +23,13 @@
       &:not(:last-child) {
         margin-right: $gutter-horizontal;
       }
+
+      @include respond(tab-port) {
+        width: 100% !important;
+        margin-bottom: $gutter-vertical-small;
+        margin-right: 0;
+      }
+
     }
 
     //TODO 2 cols

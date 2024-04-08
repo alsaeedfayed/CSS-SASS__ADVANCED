@@ -1,10 +1,12 @@
 @import "../../../../../assets/sass/abstract/variables";
+@import "../../../../../assets/sass/abstract/mixins";
 
 .section-about{
   background-color: $color-grey-light-1;
   padding: 25rem 0;
   margin-top: -20vh;
-  .heading-secodary{
-
+  @include respond(tab-port) {
+    padding: 20rem 0;
   }
+
 }

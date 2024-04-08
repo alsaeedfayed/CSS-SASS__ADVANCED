@@ -13,3 +13,44 @@
   left: 50%;
   transform: translate(-50%, -50%) scale(.5);
 }
+
+
+/*
+MEDIA QUEERY MANAGER
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+*/
+
+// @mixin respond-phone{
+//   @media screen and (max-width: 600px) {
+//       //TODO Pass content to media query -- which is a block of code
+//     @content;
+//   }
+// }
+
+
+/*
+TODO BREAK POINTS CHOICES
+-phone
+-tab-port
+-tab-land
+-big-desktop
+*/
+
+@mixin respond($breakpoint){
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 37.5em) { @content };  //600px
+  }
+  @if $breakpoint == tab-port {
+    @media only screen and (max-width: 56.25em) { @content };     //900px  //notice we are using ems to be relative efficted
+  }
+  @if $breakpoint == tab-land {
+    @media only screen and (max-width: 75em) { @content };    //1200px
+  }
+  @if $breakpoint == big-desktop {
+    @media only screen and (max-width: 112.5em) { @content };    //1800px
+  }
+}

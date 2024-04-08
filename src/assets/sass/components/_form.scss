@@ -19,6 +19,9 @@
      //TODO style the placeholder
   &::-webkit-input-placeholder{
     color: $color-grey-dark-2;
+    @include respond(tab-port) {
+      width: 100%;
+    }
   }
 
   &:focus{
@@ -31,7 +34,6 @@
   &:focus:invalid{
     border-bottom: 3px solid rgba($color-secondary-dark,1);
   }
-
   }
 
   &__label{
@@ -61,6 +63,10 @@
   &__radio-group{
     width: 50%;
     display: inline-block;
+    @include respond(tab-port){
+      width: 100%;
+      margin-bottom: 2rem;
+    }
   }
 
   &__radio-input{

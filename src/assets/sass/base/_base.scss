@@ -1,3 +1,4 @@
+
 *,
 *::after,
 *::before {
@@ -6,9 +7,50 @@
   box-sizing: border-box; // dont add padding or border to total height or width
 }
 
+.body{
+  font-family: "Roboto", sans-serif !important;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.7; //1.7 times the predefined line height
+  color: #777;
+  padding: 3rem; //padding is not inherited
+
+  @include respond(tab-port) {
+    padding: 0;
+  }
+}
+
+
+
 html {
   //set the root font size
-  font-size: 62.5%;
+  //remember : default font size is 16px
+  font-size: 62.5%; // 1rem = 10 px , 10/16 => 62.5%
+  //TODO include mixin media mobile ex
+  // @include respond-phone {
+  //   font-size: 50%;
+  // }
+
+  // @include respond(phone){
+  //   font-size: 50%;
+  // }
+
+  @include respond(big-desktop){
+    font-size: 75%; // 1 rem = 12px  , 12 / 16 = 75%
+  }
+
+
+  @include respond(tab-land){
+    font-size: 56.5%; // 1 rem = 9px  , 9 / 16 = 56.5%
+  }
+
+
+  @include respond(tab-port){
+    font-size: 50%;  // 1 rem = 8px  , 8 / 16 = 50%
+  }
+
+
+
 }
 
 

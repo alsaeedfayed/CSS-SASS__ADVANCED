@@ -1,3 +1,4 @@
+@import "../../../../../assets/sass/abstract/mixins";
 @import "../../../../../assets/sass/abstract/variables";
 .section-features{
   padding: 20rem 0;
@@ -15,5 +16,10 @@
   //TODO the trick is to do the opposite to the direct child
   & > * {
     transform: skewY(7deg);
+  }
+
+  @include respond(tab-port){
+    padding: 10rem 0;
+    margin-top: -5rem;
   }
 }
