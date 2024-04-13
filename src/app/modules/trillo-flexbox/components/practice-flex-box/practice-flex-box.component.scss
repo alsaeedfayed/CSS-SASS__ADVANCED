@@ -1,0 +1,40 @@
+.container {
+  background-color: #ccc;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center; //TODO -- default is stretch
+  height: 100rem;
+
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+.item {
+  background-color: #f1425d;
+  padding: 30px;
+  margin: 30px;
+  color: #fff;
+  font-size: 40px;
+  flex-grow: 1;
+}
+
+
+
+.item2{
+ height: 20rem;
+ flex-grow: 2; //TODO -- 4 time of the main flex grow which is 1 here
+}
+
+.item4{
+  //align-self: flex-end;
+  //  order: -1;
+}
+.item3{
+  //flex-basis: 400px;
+  //flex-shrink: 0; // todo this item wont be shrinked whatever the width is.
+  //TODO -- shortcut for all flex props
+  //TODO  flex : flex-grow flex-shrink flex-basis;
+  flex: 0 0 500px;
+}

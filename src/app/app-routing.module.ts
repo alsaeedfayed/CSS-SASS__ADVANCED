@@ -14,6 +14,10 @@ const routes: Routes = [
   {
     path :'scss-pratice',
     loadChildren : () => import('./modules/scss-pratice/scss-pratice.module').then((m) => m.ScssPraticeModule)
+  },
+  {
+    path : 'trillo',
+    loadChildren : () => import('./modules/trillo-flexbox/trillo-flexbox.module').then((m) => m.TrilloFlexboxModule)
   }
 ];
 

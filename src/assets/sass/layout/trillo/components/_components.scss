@@ -1,0 +1,485 @@
+//TODO LOGO
+.trillo-logo {
+  height: 3.25rem;
+  margin-left: 2rem;
+}
+
+//TODO SEARCH
+.search {
+  flex: 0 0 40%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__input {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background-color: var(--color-grey-light-2-trillo);
+    border: none;
+    padding: 0.7rem 2rem;
+    border-radius: 100px;
+    width: 90%;
+    transition: 0.3s ease-in-out;
+    margin-right: -3.5rem;
+
+    &:focus {
+      outline: none;
+      width: 100%;
+      background-color: var(--color-grey-light-3-trillo);
+    }
+
+    &::-webkit-input-placeholder {
+      font-weight: 100;
+      color: var(--color-grey-light-4-trillo);
+    }
+  }
+
+  &input:focus + &__button {
+    background-color: var(--color-grey-light-3-trillo);
+  }
+
+  &__button {
+    border: none;
+    background-color: var(--color-grey-light-2-trillo);
+    transition: 0.2s ease-in-out;
+    &:focus {
+      outline: none;
+    }
+    &:active {
+      transform: translateY(2px);
+    }
+  }
+
+  &__icon {
+    height: 2rem;
+    width: 2rem;
+    fill: var(--color-grey-dark-3-trillo);
+  }
+}
+
+//TODO USER NAV
+.user-nav {
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+  & > * {
+    padding: 0 2rem;
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  & > *:hover {
+    background-color: var(--color-grey-light-2-trillo);
+  }
+  &__icon-box {
+    position: relative;
+  }
+
+  &__icon {
+    height: 2.25rem;
+    width: 2.25rem;
+    fill: var(--color-grey-dark-2-trillo);
+  }
+
+  &__notification {
+    font-size: 0.8rem;
+    height: 1.75rem;
+    width: 1.75rem;
+    border-radius: 50%;
+    background-color: var(--color-primary-trillo);
+    color: #fff;
+    position: absolute;
+    top: 1.5rem;
+    right: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__user-photo {
+    height: 3.75rem;
+    border-radius: 50%;
+    margin-right: 1rem;
+  }
+}
+
+//TODO SIDE NAV
+.side {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.side-nav {
+  font-size: 1.4rem;
+  list-style: none;
+  margin-top: 3.5rem;
+
+  &__item::before {
+    content: "";
+    width: 3px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: var(--color-primary-trillo);
+    transition: transform 0.2s ease-in-out,
+      width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s; //TODO delay .4s then take .2s transition
+    transform: scaleY(0);
+    transform-origin: center; //TODO Important where to start your transformation
+  }
+
+  &__item {
+    position: relative;
+    &:not(:last-child) {
+      margin-bottom: 0.5rem;
+    }
+    z-index: 1;
+  }
+
+  &__item:hover::before {
+    width: 100%;
+    transform: scaleY(1);
+    z-index: -1;
+  }
+
+  &__link:link,
+  &__link:visited {
+    color: var(--color-grey-light-1-trillo);
+    text-decoration: none;
+    text-transform: uppercase;
+    display: block;
+    padding: 1.4rem 3rem;
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon {
+    height: 1.75rem;
+    width: 1.75rem;
+    margin-right: 2rem;
+    fill: currentColor;
+  }
+}
+
+//TODO LEGAL
+.legal {
+  font-size: 1.2rem;
+  color: var(--color-grey-light-4);
+  text-align: center;
+  padding: 2.5rem;
+}
+
+//TODO GALLERY
+.gallery {
+  display: flex;
+  &__photo {
+    width: 100%;
+    display: block;
+  }
+}
+
+//TODO HOTEL OVERVIEW
+.overview {
+  display: flex;
+  border-bottom: 1px solid #e1dbdb;
+  align-items: center;
+  &__heading {
+    font-size: 2.25rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 1.5rem 3rem;
+  }
+
+  &__stars {
+    //TODO using margin auto is so powerful with flexbox to make space
+    margin-right: auto;
+    display: flex;
+  }
+
+  &__icon-star,
+  &__icon-location {
+    width: 1.75rem;
+    height: 1.75rem;
+    fill: var(--color-primary-trillo);
+  }
+
+  &__location {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+  }
+
+  &__icon-location {
+    margin-right: 0.75rem;
+  }
+
+  &__rating {
+    background-color: var(--color-primary-trillo);
+    color: #fff;
+    margin-left: 3rem;
+    align-self: stretch;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  &__rating-count {
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-left: 1rem;
+  }
+
+  &__rating-average {
+    font-size: 1.7rem;
+    font-weight: 300;
+    color: var(--color-grey-light-2-trillo);
+  }
+}
+
+//TODO button inline
+.btn-inline-trillo {
+  border: none;
+  color: var(--color-primary-trillo);
+  font-size: inherit;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+  display: inline-block;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+
+  &span{
+    margin-left: 3px;
+    transition: margin-left 0.5s ease;
+  }
+  &:hover {
+    background-color: var(--color-primary-trillo);
+    color: #fff;
+    span{
+      margin-left: 8px;
+      color: #fff;
+    }
+  }
+
+  &:hover {
+    color: var(--color-grey-dark-2-trillo);
+  }
+
+  &:focus {
+    outline: none;
+    animation: pulsate 1s infinite linear;
+  }
+}
+
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.25);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+}
+
+//TODO PARAGRAPH
+.paragraph:not(:last-of-type) {
+  margin-bottom: 2rem;
+}
+
+//TODO LIST
+.trillo-list {
+  list-style: none;
+  margin: 3rem 0;
+  padding: 3rem 0;
+  border-top: var(--line);
+  border-bottom: var(--line);
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    flex: 0 0 50%;
+    margin-bottom: 0.7rem;
+    display: flex;
+    align-items: center;
+  }
+
+  &__item::before {
+    content: "";
+    //TODO for older browsers
+    // background-image: url(../../../../images/Trillo/starter/img/SVG/chevron-thin-right.svg);
+    // background-size: cover;
+
+    //TODO using masks for newer browser // for setting the color of the icon using this trick
+    background-color: var(--color-primary-trillo);
+    -webkit-mask-image: url(../../../../images/Trillo/starter/img/SVG/chevron-thin-right.svg);
+    -webkit-mask-size: cover;
+
+    display: inline-block;
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+}
+
+//TODO RECOMMEND
+.recommend {
+  font-size: 1.3rem;
+  color: var(--color-grey-dark-3-trillo);
+  display: flex;
+  align-items: center;
+
+  &__count {
+    margin-right: auto;
+  }
+
+  &__photo {
+    box-sizing: content-box;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    border: 2px solid #fff;
+
+    &:not(:last-child) {
+      margin-right: -1.5rem;
+    }
+  }
+}
+
+//TODO REVIEWS
+.review {
+  background-color: #fff;
+  box-shadow: var(--shadow-light);
+  padding: 3rem;
+  margin-bottom: 3.5rem;
+  position: relative;
+  overflow: hidden;
+
+  &__text {
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 10; //TODO remember zindex only works if u set the position
+  }
+
+  &__user {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+  }
+
+  &__photo {
+    height: 4.5rem;
+    width: 4.5rem;
+    border-radius: 50%;
+  }
+
+  &__user-box {
+    margin-left: 1.5rem;
+    margin-right: auto;
+  }
+
+  &__user-name {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: var(--color-grey-dark-3-trillo);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  &__user-date {
+    font-size: 1rem;
+    color: var(--color-grey-dark-3-trillo);
+  }
+
+  &__rating {
+    color: var(--color-primary-trillo);
+    font-size: 2.2rem;
+    font-weight: 300;
+  }
+
+  &::before {
+    content: "\201c";
+    position: absolute;
+    top: -2.75rem;
+    left: -1rem;
+    line-height: 1;
+    font-size: 20rem;
+    color: var(--color-grey-light-2-trillo);
+    font-family: sans-serif;
+    z-index: 1;
+  }
+}
+
+
+//TODO CALL TO ACTION
+.cta {
+  padding: 3rem 0;
+  text-align: center;
+
+  &__book-now{
+    font-size: 2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+  }
+}
+
+
+.trillo-btn{
+
+  font-size: 1.5rem;
+  border: none;
+  font-weight: 300;
+  text-transform: uppercase;
+  border-radius: 10rem;
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+  background-image: linear-gradient(to right , var(--color-primary-light-trillo), var(--color-primary-dark-trillo));
+  overflow: hidden;
+
+  &__visible{
+    display: inline-block;
+    padding: 2rem 7.5rem;
+    height: 100%;
+    transition: all .5s ease-in-out;
+  }
+
+  &__invisible{
+    display: inline-block;
+    padding: 2rem 0;
+    position: absolute;
+    left: 0;
+    top: -100%;
+    height: 100%;
+    width: 100%;
+    transition: all .5s ease-in-out;
+  }
+
+  &:hover{
+    background-image: linear-gradient(to left , var(--color-primary-light-trillo), var(--color-primary-dark-trillo));
+
+  }
+
+  &:hover &__visible{
+
+    transform: translateY(100%);
+    }
+
+    &:hover &__invisible{
+      top: 0;
+
+    }
+
+}

@@ -11,6 +11,7 @@ import { StoriesComponent } from './components/stories/stories.component';
 import { BookNowComponent } from './components/book-now/book-now.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PopupComponent } from '../../shared/popup/popup.component';
+import { NavigationbarComponent } from '../../shared/navigationbar/navigationbar.component';
 
 
 
@@ -25,7 +26,8 @@ import { PopupComponent } from '../../shared/popup/popup.component';
         StoriesComponent,
         BookNowComponent,
         FooterComponent,
-        PopupComponent
+        PopupComponent,
+        NavigationbarComponent
     ],
     imports: [
         CommonModule,

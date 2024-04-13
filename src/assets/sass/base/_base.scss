@@ -1,14 +1,33 @@
 
+:root{
+  --color-primary-trillo : #eb2f64;
+  --color-primary-light-trillo : #ff3366;
+  --color-primary-dark-trillo : #ba265d;
+  --color-grey-light-1-trillo : #faf9f9;
+  --color-grey-light-2-trillo : #f4f2f2;
+  --color-grey-light-3-trillo : #f0eeee;
+  --color-grey-light-4-trillo : #ccc;
+  --color-grey-dark-1-trillo : #333;
+  --color-grey-dark-2-trillo : #777;
+  --color-grey-dark-3-trillo : #999;
+  --line : 1px solid #f5efef;
+}
+
+$bp-largest : 75em;
+$bp-large : 68.75em;
+
+
 *,
 *::after,
 *::before {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; // dont add padding or border to total height or width
+  box-sizing: inherit;
+
 }
 
 .body{
-  font-family: "Roboto", sans-serif !important;
+  font-family: "monospace", sans-serif !important;
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 1.7; //1.7 times the predefined line height
@@ -25,6 +44,7 @@
 html {
   //set the root font size
   //remember : default font size is 16px
+  box-sizing: border-box; // dont add padding or border to total height or width
   font-size: 62.5%; // 1rem = 10 px , 10/16 => 62.5%
   //TODO include mixin media mobile ex
   // @include respond-phone {
@@ -47,6 +67,12 @@ html {
 
   @include respond(tab-port){
     font-size: 50%;  // 1 rem = 8px  , 8 / 16 = 50%
+  }
+
+
+  //TODO FOR TRILLO
+  @media only screen and (max-width : $bp-large){
+    font-size: 50%;
   }
 
 

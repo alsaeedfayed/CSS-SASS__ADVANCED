@@ -1,0 +1,59 @@
+.container-trillo {
+  max-width: 140rem;
+  margin: 8rem auto;
+  background-color: var(--color-grey-light-2-trillo);
+  box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+  min-height: 50rem;
+  @media only screen and (max-width : $bp-largest){
+   margin: 0;
+  }
+
+}
+
+.header-trillo {
+  height: 7rem;
+  background-color: #fff;
+  border-bottom: var(--color-grey-light-2-trillo);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.content-trillo {
+  display: flex;
+}
+
+.sidebar-trillo {
+  background-color: var(--color-grey-dark-1-trillo);
+  flex : 0 0 18%;
+}
+
+.hotel-view {
+  flex: 1;
+
+
+}
+
+
+.detail{  font-size: 1.4rem;
+
+  display: flex;
+  padding: 4.5rem;
+  background-color: #e9e9e9;
+  border-bottom: #b2a4a4;
+
+}
+
+.description {
+  background-color: #fff;
+  box-shadow: 0 2rem  5rem rgba(0, 0, 0, 0.06);
+  padding: 3rem;
+  flex: 0 0 60%;
+  margin-right: 4.4rem;
+}
+
+.user-reviews{
+  flex: 1;
+}
