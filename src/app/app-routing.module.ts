@@ -18,6 +18,10 @@ const routes: Routes = [
   {
     path : 'trillo',
     loadChildren : () => import('./modules/trillo-flexbox/trillo-flexbox.module').then((m) => m.TrilloFlexboxModule)
+  },
+  {
+    path : 'grid',
+    loadChildren : () => import('./modules/css-grid/css-grid.module').then((m) => m.CssGridModule)
   }
 ];
 
